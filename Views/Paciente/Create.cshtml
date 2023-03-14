@@ -1,0 +1,75 @@
+﻿@using PacientesRegister.Models.ViewModels
+@model PacienteViewModel
+
+<h1>Registrar paciente</h1>
+<hr />
+    
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Clavepaciente" class="control-label"></label>
+                    <input asp-for="Clavepaciente" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Apellidos" class="control-label"></label>
+                    <input asp-for="Apellidos" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="NombrePac" class="control-label"></label>
+                    <input asp-for="NombrePac" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DireccionPac" class="control-label"></label>
+                    <input asp-for="DireccionPac" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="TelefonoCasa" class="control-label"></label>
+                    <input asp-for="TelefonoCasa" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="TelefonoCelular" class="control-label"></label>
+                    <input asp-for="TelefonoCelular" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="EmailPac" class="control-label"></label>
+                    <input asp-for="EmailPac" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SexoPac" class="control-label"></label>
+                    <input asp-for="SexoPac" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Activo" class="control-label"></label>
+                    <input asp-for="Activo" class="form-control" />
+                    <span asp-validation-for="Activo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TipoSangreID" class="control-label"></label>
+                    <select asp-for="TipoSangreID" class="form-control" asp-items="ViewBag.TiposSangre"></select>
+                    <span asp-validation-for="TipoSangreID" class="text-danger"></span>
+                </div>
+
+                <hr />
+                <div>
+                    <input type="submit" value="Registrar" class="btn btn-primary"/>
+                </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,37 @@
+﻿@model List<PacientesRegister.Models.DatosPaciente>
+
+<h1>Pacientes</h1>
+
+<p>
+    <a asp-action="Create">Registrar</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Clave</td>
+            <td>Apellido</td>
+            <td>Nombre</td>
+            <td>Direccion</td>
+            <td>Telefono de casa</td>
+            <td>Telefono celular</td>
+            <td>Email</td>
+            <td>Tipo de sangre</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var paciente in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => paciente.Clavepaciente)</td>
+                <td>@Html.DisplayFor(m => paciente.Apellidos)</td>
+                <td>@Html.DisplayFor(m => paciente.NombrePac)</td>
+                <td>@Html.DisplayFor(m => paciente.DireccionPac)</td>
+                <td>@Html.DisplayFor(m => paciente.TelefonoCasa)</td>
+                <td>@Html.DisplayFor(m => paciente.TelefonoCelular)</td>
+                <td>@Html.DisplayFor(m => paciente.EmailPac)</td>
+                <td>@Html.DisplayFor(m => paciente.TipoSangre.Tipo)</td>
+            </tr>
+        }
+    </tbody>
+</table>

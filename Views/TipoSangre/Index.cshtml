@@ -1,0 +1,23 @@
+﻿@model List<TipoSangre>
+
+<h1>Tipos de sangre</h1>
+
+<p>
+    <a asp-action="Create">Crear tipo de sangre</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Tipo</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tipo in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => tipo.Tipo)</td>
+            </tr>
+        }
+    </tbody>
+</table>
